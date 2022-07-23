@@ -1,0 +1,13 @@
+version: "3"
+services:
+  db-filler:
+    container_name: my5grantester-open5gs-db-filler
+    network_mode: "bridge"
+    build:
+      context: ./my5G-RANTester-Database-Filler/
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NUM_DEVICES=${NUM_DEVICES}
+
+
