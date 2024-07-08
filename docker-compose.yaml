@@ -10,9 +10,9 @@ services:
       - NUM_DEVICES=${NUM_DEVICES}
     networks:
       default:
-          ipv4_address: 172.22.0.35
+        ipv4_address: 172.18.0.35
 
 networks:
-    default:
-        external:
-            name: docker_open5gs_default
+  default:
+    external:
+      name: docker_open5gs_default
