@@ -1,58 +1,60 @@
-[{
-  "imsi": "$(MCC)$(MNC)$(MSIN)",
-  "subscribed_rau_tau_timer": 12,
-  "network_access_mode": 2,
-  "subscriber_status": 0,
-  "access_restriction_data": 32,
-  "slice": [
-    {
-      "sst": $(SST_INT),
-      "default_indicator": true,
-      "sd": "$(SD)",
-      "session": [
-        {
-          "name": "$(DNN)",
-          "type": 3,
-          "pcc_rule": [],
-          "ambr": {
-            "uplink": {
-              "value": 1,
-              "unit": 3
-            },
-            "downlink": {
-              "value": 1,
-              "unit": 3
-            }
-          },
-          "qos": {
-            "index": 9,
-            "arp": {
-              "priority_level": 8,
-              "pre_emption_capability": 1,
-              "pre_emption_vulnerability": 1
-            }
-          }
-        }
-      ]
-    }
-  ],
-  "ambr": {
-    "uplink": {
-      "value": 1,
-      "unit": 3
+[
+  {
+    "access_restriction_data": 32,
+    "ambr": {
+      "downlink": {
+        "unit": 3,
+        "value": 10
+      },
+      "uplink": {
+        "unit": 3,
+        "value": 10
+      }
     },
-    "downlink": {
-      "value": 1,
-      "unit": 3
-    }
-  },
-  "security": {
-    "k": "$(KEY)",
-    "amf": "$(AMF)",
-    "op": null,
-    "opc": "$(OPC)",
-    "sqn": 32
-  },
-  "msisdn": [],
-  "schema_version": 1
-}]
+    "imeisv": [],
+    "imsi": "$(MCC)$(MNC)$(MSIN)",
+    "mm_realm": [],
+    "mme_host": [],
+    "msisdn": [],
+    "network_access_mode": 0,
+    "schema_version": 1,
+    "security": {
+      "amf": "$(AMF)",
+      "k": "$(KEY)",
+      "op": null,
+      "opc": "$(OPC)"
+    },
+    "slice": [
+      {
+        "default_indicator": true,
+        "session": [
+          {
+            "ambr": {
+              "downlink": {
+                "unit": 3,
+                "value": 10
+              },
+              "uplink": {
+                "unit": 3,
+                "value": 10
+              }
+            },
+            "name": "$(DNN)",
+            "pcc_rule": [],
+            "qos": {
+              "arp": {
+                "pre_emption_capability": 1,
+                "pre_emption_vulnerability": 2,
+                "priority_level": 8
+              },
+              "index": 9
+            },
+            "type": 3
+          }
+        ],
+        "sst": $(SST_INT)
+      }
+    ],
+    "subscribed_rau_tau_timer": 12
+  }
+]
